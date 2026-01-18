@@ -8,15 +8,15 @@
 
 name: Java CI with Maven
 
+permissions:
+  contents: read
+  security-events: write
+
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
-permissions:
-  contents: read
-  security-events: write
 
 jobs:
   build:
