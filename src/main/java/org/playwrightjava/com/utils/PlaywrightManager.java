@@ -19,16 +19,24 @@ public class PlaywrightManager {
     private static final ThreadLocal<Page> PAGE = new ThreadLocal<>();
 
     /**
-     * Initialize Playwright with defaults from system properties:
-     * -Dbrowser=chromium|firefox|webkit (default: chromium)
-     * -Dheadless=true|false (default: false)
-     * -Dtrace=true|false (default: true)
+     * Initialize Playwright with defaults from system properties or environment variables:
+     * -Dbrowser or env BROWSER (chromium|firefox|webkit) (default: chromium)
+     * -Dheadless or env HEADLESS (true|false) (default: true)
+     * -Dtrace or env TRACE (true|false) (default: false)
      */
     public static void init() {
-        String browser = System.getProperty("browser", "chromium");
-        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
-        boolean trace = Boolean.parseBoolean(System.getProperty("trace", "true"));
+        String browser = getPropertyOrEnv("browser", "BROWSER", "chromium");
+        boolean headless = Boolean.parseBoolean(getPropertyOrEnv("headless", "HEADLESS", "true"));
+        boolean trace = Boolean.parseBoolean(getPropertyOrEnv("trace", "TRACE", "false"));
         init(browser, headless, trace);
+    }
+
+    private static String getPropertyOrEnv(String propName, String envName, String defaultValue) {
+        String val = System.getProperty(propName);
+        if (val != null && !val.isEmpty()) return val;
+        val = System.getenv(envName);
+        if (val != null && !val.isEmpty()) return val;
+        return defaultValue;
     }
 
     public static void init(String browserName, boolean headless, boolean startTracing) {
