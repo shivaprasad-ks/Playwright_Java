@@ -11,7 +11,7 @@ public class ExampleSteps {
 
     @Given("I open the example page")
     public void i_open_the_example_page() {
-        Page page = PlaywrightHooks.getpage();
+        Page page = PlaywrightHooks.getPage();
         if (page != null) {
             // ensure a clean starting point
             page.navigate("about:blank");
@@ -25,7 +25,7 @@ public class ExampleSteps {
 
     @Then("the page title should contain {string}")
     public void the_page_title_should_contain(String text) {
-        Page page = PlaywrightHooks.getpage();
+        Page page = PlaywrightHooks.getPage();
         String title = page.title();
         Assert.assertTrue(title.contains(text), "Expected page title to contain: " + text + " but was: " + title);
     }
