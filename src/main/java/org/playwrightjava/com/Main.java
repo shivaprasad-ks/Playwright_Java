@@ -1,4 +1,4 @@
-package org.derivedproduct1.com;
+package org.playwrightjava.com;
 
 import java.nio.file.Paths;
 

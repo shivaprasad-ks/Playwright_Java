@@ -18,13 +18,13 @@ Quick build
 
 Run the sample Main class
 Option A — using the Maven Exec plugin (no changes to pom required):
-   mvn org.codehaus.mojo:exec-maven-plugin:3.1.0:java -Dexec.mainClass="org.derivedproduct1.com.Main"
+   mvn org.codehaus.mojo:exec-maven-plugin:3.1.0:java -Dexec.mainClass="org.playwrightjava.com.Main"
 
 Option B — manual classpath run:
 1. Copy dependencies to target/dependency:
    mvn dependency:copy-dependencies -DoutputDirectory=target/dependency
 2. Run the main class:
-   java -cp target/classes:target/dependency/* org.derivedproduct1.com.Main
+   java -cp target/classes:target/dependency/* org.playwrightjava.com.Main
 
 Playwright browsers
 - On first run Playwright will usually download required browser binaries automatically.

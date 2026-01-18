@@ -1,4 +1,4 @@
-package org.derivedproduct1.com.hooks;
+package org.playwrightjava.com.hooks;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.After;

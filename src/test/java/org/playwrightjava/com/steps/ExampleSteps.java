@@ -1,9 +1,9 @@
-package org.derivedproduct1.com.steps;
+package org.playwrightjava.com.steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import org.derivedproduct1.com.hooks.PlaywrightHooks;
+import org.playwrightjava.com.hooks.PlaywrightHooks;
 import com.microsoft.playwright.Page;
 import org.testng.Assert;
 

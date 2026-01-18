@@ -1,4 +1,4 @@
-package org.derivedproduct1.com.runners;
+package org.playwrightjava.com.runners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
