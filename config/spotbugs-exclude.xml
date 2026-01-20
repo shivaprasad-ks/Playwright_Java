@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Basic SpotBugs exclude filter to suppress generated/third-party warnings. Customize as needed. -->
+<FindBugsFilter>
+    <!-- Example: exclude all warnings from files in a generated folder -->
+    <Match>
+        <Source name=".*[/\\]generated[/\\].*"/>
+    </Match>
+
+    <!-- Example: exclude common harmless nullcheck warnings in tests -->
+    <Match>
+        <Class name="~.*Test"/>
+        <Bug pattern="NP"/>
+    </Match>
+</FindBugsFilter>
+
